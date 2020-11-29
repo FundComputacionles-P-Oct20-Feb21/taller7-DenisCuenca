@@ -1,0 +1,59 @@
+/*Generar una solución que permita ingresar jugadores de fútbol;
+ por cada jugador se debe solicitar:
+Nombre el jugador
+Posición en el campo de juego
+Edad
+Estatura
+El ciclo de ingreso de información deberá terminar cuando el usuario lo
+ decida. Se debe imprimer el siguiente reporte (usar una cadena de acumulación):
+
+Listado de Jugadores
+
+Alexander Dominguez -Arquero-, edad 32, estatura 1.95
+Xavier Arreaga -Defensa-, edad 24, estatura 1.85
+Moisés Caicedo -Mediocentro-, edad 19, estatura 1.88
+Ángel Mena -Delantero-, edad 32, estatura 1.75
+Michael Estrada -Delantero-, edad 27, estatura 1.93 Promedio de edades:
+ 26.8 Promedio de estaturas: 1.87
+*/
+
+ 1. Inicio
+ 2. contador, i[0-n]
+ 3. contador <-- 1
+ 4. bandera <-- true
+ 5. nombre, x(50)[{a-z},{A-Z},{1-9},{BS}]
+ 6. posicion, x(50)[{a-z},{A-Z},{1-9},{BS}]
+ 7. edad, i[0-100]
+ 8. estatura, d[0-n]
+ 9. acumulacionEdad, i[0-n]
+10. acumulaciónEstatura, d[0-n]<--0
+11. promedioEstatura, d[0-n]<--0
+12. promedioEdad, d[0,n]
+13. cadenaFinal, x(200)[{a-z},{A-Z},{1-9},{/},{BS}]
+14. cadenaFinal <-- "" 
+15. desicion, i[0-n]
+16. Haga_Hasta
+17.      << "Ingrese el nombre del jugador"
+18.      >> nombre
+19.      << "Ingrese el posición del jugador en el campo de juego"
+20.      >> posicion
+21.      << "Ingrese la edad del jugador"
+22.      >> edad
+23.      << "Ingrese la estatura del jugador"
+24.      >> estatura
+25.      acumulacionEdad <-- acumulacionEdad + edad
+26.      acumulacionEstatura <-- accumulacionEstatura + estatura
+27.      contador <-- contador + 1
+28.      cadenaFinal <-- cadenaFinal + nombre + "-" + posicion "-, edad" + edad + ", estatura "+ estatura"\n" 
+29.      << "Para no ingrear mas jugadores digite un número menor a 0"
+30.      >> desicion
+31.      Si desicion < 0 entonces
+32.              bandera <-- false
+33.      Fin Si
+34. Fin Haga_Hasta (bandera)
+35. promedioEstatura <-- acumulacionEstatura / contador 
+36. promedioEdad <-- acumulacionEdad / contador
+37. cadenaFinal <-- cadenaFinal + "\nPromedio de edades: " + promedioEdad + "\n" +Promedio de Estatura: " + promedioEstatura"\n"
+38. << cadenaFinal
+39. Fin
+       
